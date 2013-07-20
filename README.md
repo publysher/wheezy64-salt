@@ -16,5 +16,11 @@ Usage
 7. And start provisioning
 
 
+About
+-------------
 
+This definition is based on the original [VeeWee Debian-7.1.0-amd64-netboot](https://github.com/jedi4ever/veewee/tree/master/templates/Debian-7.1.0-amd64-netboot) 
+template. 
+
+I've made some changes to the `definition.rb` file and marked them with `#YDD`. 
 
