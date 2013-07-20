@@ -41,15 +41,12 @@ Veewee::Definition.declare({
     "base.sh",
     "vagrant.sh",
     "virtualbox.sh",
-    #"vmfusion.sh",
-    #"ruby.sh",  #YDD
-    #"puppet.sh",#YDD
-    #"chef.sh",  #YDD
+    "python.sh",		#YDD
+    "salt.sh", 			#YDD
     "cleanup-virtualbox.sh",
     "cleanup-locales.sh",	#YDD
     "cleanup-packages.sh",	#YDD
     "cleanup-caches.sh",	#YDD
-    "cleanup-extra.sh",		#YDD
     "cleanup.sh",
     "zerodisk.sh"
   ],

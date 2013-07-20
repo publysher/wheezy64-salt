@@ -1,20 +1,8 @@
 #!/bin/bash
 
-export KEEP="grub-pc openssh-server linux-image-$(uname -r) locales sudo"
-export REMOVE="aptitude aptitude-common nano tasksel libxapian22 groff-base wget libcwidget3"
+# Based on the list on http://wiki.debian.org/ReduceDebian
 
-export REQUIRE="$(aptitude search '(?priority(important) | ?priority(required)) ?installed' -F%p)"
-export NONREQS="$(aptitude search '!?priority(important) !?priority(required) ?installed' -F%p)"
+export REMOVE="acpi acpid aptitude aptitude-common at bash-completion bc bind9-host bsd-mailx dc debian-faq doc-debian eject exim4 exim4-base exim4-config exim4-daemon-light file groff iamerican ibritish info ispell libdbus-1-3 libept1.4.12 libboost-iostreams1.49.0 libcwidget3 libxapian22 libsigc++-2.0-0c2a laptop-detect manpages mutt nano net-tools ncurses-term reportbug tasksel traceroute wamerican w3m whois "
 
-apt-mark manual $KEEP		# prevent autoremove later on
-apt-mark hold $KEEP $REQUIRE	# temporary hold on the packages we want to keep
-apt-mark unhold $REMOVE
+DEBIAN_FRONTEND=noninteractive apt-get -y purge $REMOVE
 
-# remove the others one by one
-for pkg in $NONREQS $REMOVE
-do
-	apt-get -y -qq purge $pkg || echo "Could not remove $pkg"
-done
-
-# unlock our packages
-apt-mark unhold $KEEP $REQUIRE
