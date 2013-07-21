@@ -1,12 +1,19 @@
 wheezy64-salt
 =============
 
-A VeeWee definition to create a 64-bit Debian 7.1 'wheezy' image that can be provisioned with SaltStack
+A Veewee definition to create a 64-bit Debian 7.1 'wheezy' image that can be provisioned with SaltStack.
+
+The goal of this project is to create the absolute minimal image necessary for full automated deployments; in other words, only those packages to ensure a running SSH server and a functioning salt stack. 
+
+Although the ideal solution lies heavy modifications of the installer's `preseed.cfg` to ensure that only those packages are installed that are absolutely necessary, the current approach takes a shorter route: after installing the base system and Salt, all non essentials packages are removed after the fact. 
+
+So far, the resulting box has been sized down to *188 Mb*,
+
 
 Usage
 -------------
 
-1. Install [VeeWee](https://github.com/jedi4ever/veewee)
+1. Install [Veewee](https://github.com/jedi4ever/veewee)
 2. Install [Vagrant](http://www.vagrantup.com/)
 3. Create a new definition: 
 
@@ -29,6 +36,11 @@ Usage
 	`vagrant init wheezy64-salt`
 
 8. And start provisioning
+
+
+Security
+-------------
+Security should also be part of the provisioning, and be aware of the fact that this image contains a default vagrant user with the default insecure SSH keys. 
 
 
 About
