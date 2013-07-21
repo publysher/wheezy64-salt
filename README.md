@@ -23,7 +23,7 @@ Usage
 
 	`bundle exec veewee vbox build 'wheezy64-salt'`
 
-5. Export your box from VeeWee: 
+5. Export your box from Veewee: 
 
 	`bundle exec veewee vbox export 'wheezy64-salt'`
 
@@ -46,7 +46,7 @@ Security should also be part of the provisioning, and be aware of the fact that 
 About
 -------------
 
-This definition is based on the original [VeeWee Debian-7.1.0-amd64-netboot](https://github.com/jedi4ever/veewee/tree/master/templates/Debian-7.1.0-amd64-netboot) 
+This definition is based on the original [Veewee Debian-7.1.0-amd64-netboot](https://github.com/jedi4ever/veewee/tree/master/templates/Debian-7.1.0-amd64-netboot) 
 template. 
 
 I've made some changes to the `definition.rb` file and marked them with `#YDD`. 
